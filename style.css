@@ -158,7 +158,7 @@ header {
     border-radius: 50%;
     border: 5px solid white;
     object-fit: cover;
-    margin: -60px auto 20px; /* Changé de -75px à -60px pour descendre un peu l'image */
+    margin: -90px auto 20px; /* Augmenté de -75px à -90px (plus négatif = plus haut) */
     display: block;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     position: relative;
