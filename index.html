@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha BALDÉ - Ingénieur Biomédical</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -17,9 +18,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
-            background-color: #f9f9f9;
         }
         
         .container {
@@ -31,26 +32,120 @@
         header {
             background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             color: white;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
-            border-radius: 8px 8px 0 0;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 30px;
         }
         
         h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 2.5em;
+            font-weight: 700;
         }
         
         .contact-info {
-            margin-top: 15px;
+            margin: 15px 0;
             font-size: 1.1em;
         }
         
-        .section-title {
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .round-button {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .round-button:hover {
+            transform: translateY(-5px);
+            background: var(--secondary-color);
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .round-button i {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .round-button span {
+            font-weight: 600;
+            font-size: 1em;
+        }
+        
+        /* Styles des modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+        
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--accent-color);
+        }
+        
+        .modal-title {
             color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 5px;
-            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
         }
         
         .two-columns {
@@ -119,20 +214,23 @@
             padding: 20px;
             background-color: var(--primary-color);
             color: white;
-            border-radius: 0 0 8px 8px;
+            border-radius: 0 0 15px 15px;
         }
         
         @media (max-width: 768px) {
+            .round-button {
+                width: 120px;
+                height: 120px;
+            }
+            
             .two-columns {
                 grid-template-columns: 1fr;
             }
             
-            header {
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
                 padding: 20px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
             }
         }
     </style>
@@ -149,174 +247,239 @@
         </header>
         
         <main>
-            <h2 class="section-title">Ingénieur biomédical</h2>
-            
-            <h3 class="section-title">COMPÉTENCES ET CONNAISSANCES</h3>
-            <div class="two-columns">
-                <div>
-                    <div class="competence-category">
-                        <h3>Achats publics</h3>
-                        <ul>
-                            <li>Prospecter et suivre les marchés (Sourcing, benchmarking, veille technologique, analyse des marchés)</li>
-                            <li>Participer aux ateliers de travail avec les prescripteurs</li>
-                            <li>Stratégie d'achat</li>
-                            <li>Code de la commande publique</li>
-                            <li>Mesurer la performance achat</li>
-                            <li>Rédaction des documents de marché (CCTP, BPU, CRT, RC…)</li>
-                            <li>Analyse des offres et attribution</li>
-                            <li>Piloter le lancement et l'exécution des marchés</li>
-                            <li>Participer aux négociations des contrats avec les fournisseurs</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="competence-category">
-                        <h3>Biomédical</h3>
-                        <ul>
-                            <li>Maintenance préventive et curative sur divers équipements biomédicaux</li>
-                            <li>Gestion, analyse et organisation des activités de maintenance</li>
-                            <li>Gestion des pièces et des consommables</li>
-                            <li>Traçabilité des équipements et des interventions</li>
-                            <li>Établissement et suivi des déclarations de matériovigilance</li>
-                            <li>Normes : ISO 9001, ISO 13485, ISO 22870</li>
-                            <li>Gestion de l'équipe technique</li>
-                            <li>Gestion de projet (planification des renouvellements, coordination inter-services)</li>
-                            <li>Travail multi-sites, gestion d'urgences techniques</li>
-                            <li>Négociation fournisseurs, gestion des contrats de maintenance</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="buttons-container">
+                <button class="round-button" onclick="openModal('competences-modal')">
+                    <i class="fas fa-tools"></i>
+                    <span>Compétences</span>
+                </button>
                 
-                <div>
-                    <div class="competence-category">
-                        <h3>Techniques et théoriques</h3>
-                        <ul>
-                            <li>IRM, Scanner, SPECT, TEP, échographie et radiothérapie</li>
-                            <li>Ventilation et réanimation</li>
-                            <li>Équipements de biologie : Spectromètre de masse, biologie moléculaire, biologie délocalisée</li>
-                            <li>Table d'accouchement et d'opération, respirateur d'anesthésie et de transport</li>
-                            <li>Équipements du bloc opératoire</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="competence-category">
-                        <h3>Outils informatiques</h3>
-                        <ul>
-                            <li>Pack office</li>
-                            <li>PLACE, MAXIMILIEN</li>
-                            <li>OPTIM</li>
-                            <li>Sketchup</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="competence-category">
-                        <h3>Langues</h3>
-                        <ul>
-                            <li>Anglais : Intermédiaire B2</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <h3 class="section-title">EXPÉRIENCES PROFESSIONNELLES</h3>
-            
-            <div class="experience-item">
-                <div class="experience-date">Septembre 2023 – Aujourd'hui</div>
-                <h4 class="experience-title">Ingénieur biomédical | Ramsay Santé (Pôle Drôme-Ardèche)</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>Gestion du parc biomédical pour 4 cliniques (Pasteur, Parisière, Générale de Valence, Kennedy – nombre de lits : environ 600)</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-date">Janvier 2021 – Aujourd'hui</div>
-                <h4 class="experience-title">Auto-entrepreneur | Commerce et rénovation d'équipements biomédicaux</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>Achat, reconditionnement et revente d'équipements médicaux (tests, remise en conformité)</li>
-                    <li>Stratégie commerciale ciblant les cliniques en Afrique de l'Ouest (étude de marché, négociation)</li>
-                    <li>Vente en ligne de dispositifs médicaux pour particuliers (via Amazon, eBay et réseaux sociaux)</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-date">Septembre 2020 – Octobre 2021</div>
-                <h4 class="experience-title">Ingénieur biomédical/Acheteur public | RESAH (Réseau des acheteurs hospitaliers) | Paris</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>L'achat d'équipements de biologie délocalisée (16 lots)
-                        <ul>
-                            <li>Forme du marché : Accord cadre mono-attributaire à bon de commande</li>
-                            <li>Structure de l'offre : Location-maintenance, mise à disposition, achat, CPPR et coût coffret pour les réactifs</li>
-                        </ul>
-                    </li>
-                    <li>La gestion du marché pour la spectrométrie de masse
-                        <ul>
-                            <li>Forme du marché : Accord-cadre multi-attributaire à marchés subséquents</li>
-                            <li>Tâches : La gestion des avenants et des marchés subséquents, sourcing et mise en place d'une stratégie d'achat dans le cadre d'un renouvellement du marché</li>
-                        </ul>
-                    </li>
-                    <li>L'analyse des offres et attribution des marchés pour les tests sérologiques, antigéniques (COVID-19) et tests rapides (TROD)</li>
-                    <li>La gestion des marchés de décongélateur de plasma et des réactifs captifs de laboratoire</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-date">Mars – Septembre 2020</div>
-                <h4 class="experience-title">Ingénieur biomédical/Acheteur public (Stage) | RESAH (Réseau des acheteurs hospitaliers) | Paris</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>Analyse du marché, sourcing et mise en place d'une stratégie d'achat pour les équipements de biologie délocalisée</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-date">Juillet 2015 – Juillet 2017</div>
-                <h4 class="experience-title">Responsable de site | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelles (HPNP)</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>Gestion et suivi d'un parc de matériel biomédical, par délégation à l'hôpital privé nord parisien de sarcelles (HPNP)</li>
-                    <li>Nombre de lits : 300</li>
-                    <li>Services : Maternité, bloc opératoire, ambulatoire et endoscopie, réanimation, dialyse, urgence, soins de suite et réadaptation</li>
-                    <li>Gestions : Des équipements biomédicaux, du budget de maintenance pluriannuel, des kits de maintenance, des consommables et réactifs, du module de déclaration des pannes, des ECME… Etc.</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-date">Mars - Juillet 2015</div>
-                <h4 class="experience-title">Technicien biomédical (Stage) | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelle (HPNP)</h4>
-                <div class="experience-place">Missions :</div>
-                <ul>
-                    <li>Maintenance du parc biomédical</li>
-                </ul>
-            </div>
-            
-            <div class="two-columns">
-                <div>
-                    <h3 class="section-title">CENTRES D'INTÉRÊTS</h3>
-                    <div class="interests-container">
-                        <span class="interest-tag">Randonnée</span>
-                        <span class="interest-tag">Photographie</span>
-                        <span class="interest-tag">Vidéo</span>
-                    </div>
-                </div>
+                <button class="round-button" onclick="openModal('experiences-modal')">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Expériences</span>
+                </button>
                 
-                <div>
-                    <h3 class="section-title">FORMATIONS SCOLAIRES</h3>
-                    <ul>
-                        <li>2018-2020 : Master ingénierie pour le biomédical • Université Rouen-Normandie, France</li>
-                        <li>2014-2015 : Licence professionnelle maintenance et technologie : Technologie médicale et biomédicale • Université Paris-Descartes, France</li>
-                        <li>2013-2014 : BTS en systèmes électroniques • Lycée Gustave Eiffel, France</li>
-                        <li>2011-2013 : BTS en électrotechnique • Lycée de l'Essouriau, France</li>
-                        <li>2007-2008 : Baccalauréat scientifique série • Lycée de l'UNESCO, Guinée</li>
-                    </ul>
-                </div>
+                <button class="round-button" onclick="openModal('formations-modal')">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Formations</span>
+                </button>
+                
+                <button class="round-button" onclick="openModal('interets-modal')">
+                    <i class="fas fa-heart"></i>
+                    <span>Centres d'intérêt</span>
+                </button>
             </div>
         </main>
         
+        <!-- Modale Compétences -->
+        <div id="competences-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('competences-modal')">&times;</span>
+                <h2 class="modal-title">Compétences</h2>
+                
+                <div class="two-columns">
+                    <div>
+                        <div class="competence-category">
+                            <h3>Achats publics</h3>
+                            <ul>
+                                <li>Prospecter et suivre les marchés (Sourcing, benchmarking, veille technologique, analyse des marchés)</li>
+                                <li>Participer aux ateliers de travail avec les prescripteurs</li>
+                                <li>Stratégie d'achat</li>
+                                <li>Code de la commande publique</li>
+                                <li>Mesurer la performance achat</li>
+                                <li>Rédaction des documents de marché (CCTP, BPU, CRT, RC…)</li>
+                                <li>Analyse des offres et attribution</li>
+                                <li>Piloter le lancement et l'exécution des marchés</li>
+                                <li>Participer aux négociations des contrats avec les fournisseurs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Biomédical</h3>
+                            <ul>
+                                <li>Maintenance préventive et curative sur divers équipements biomédicaux</li>
+                                <li>Gestion, analyse et organisation des activités de maintenance</li>
+                                <li>Gestion des pièces et des consommables</li>
+                                <li>Traçabilité des équipements et des interventions</li>
+                                <li>Établissement et suivi des déclarations de matériovigilance</li>
+                                <li>Normes : ISO 9001, ISO 13485, ISO 22870</li>
+                                <li>Gestion de l'équipe technique</li>
+                                <li>Gestion de projet (planification des renouvellements, coordination inter-services)</li>
+                                <li>Travail multi-sites, gestion d'urgences techniques</li>
+                                <li>Négociation fournisseurs, gestion des contrats de maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="competence-category">
+                            <h3>Techniques et théoriques</h3>
+                            <ul>
+                                <li>IRM, Scanner, SPECT, TEP, échographie et radiothérapie</li>
+                                <li>Ventilation et réanimation</li>
+                                <li>Équipements de biologie : Spectromètre de masse, biologie moléculaire, biologie délocalisée</li>
+                                <li>Table d'accouchement et d'opération, respirateur d'anesthésie et de transport</li>
+                                <li>Équipements du bloc opératoire</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Outils informatiques</h3>
+                            <ul>
+                                <li>Pack office</li>
+                                <li>PLACE, MAXIMILIEN</li>
+                                <li>OPTIM</li>
+                                <li>Sketchup</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Langues</h3>
+                            <ul>
+                                <li>Anglais : Intermédiaire B2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modale Expériences -->
+        <div id="experiences-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('experiences-modal')">&times;</span>
+                <h2 class="modal-title">Expériences Professionnelles</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2023 – Aujourd'hui</div>
+                    <h3 class="experience-title">Ingénieur biomédical | Ramsay Santé (Pôle Drôme-Ardèche)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Gestion du parc biomédical pour 4 cliniques (Pasteur, Parisière, Générale de Valence, Kennedy – nombre de lits : environ 600)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Janvier 2021 – Aujourd'hui</div>
+                    <h3 class="experience-title">Auto-entrepreneur | Commerce et rénovation d'équipements biomédicaux</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Achat, reconditionnement et revente d'équipements médicaux (tests, remise en conformité)</li>
+                        <li>Stratégie commerciale ciblant les cliniques en Afrique de l'Ouest (étude de marché, négociation)</li>
+                        <li>Vente en ligne de dispositifs médicaux pour particuliers (via Amazon, eBay et réseaux sociaux)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2020 – Octobre 2021</div>
+                    <h3 class="experience-title">Ingénieur biomédical/Acheteur public | RESAH (Réseau des acheteurs hospitaliers) | Paris</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>L'achat d'équipements de biologie délocalisée (16 lots)
+                            <ul>
+                                <li>Forme du marché : Accord cadre mono-attributaire à bon de commande</li>
+                                <li>Structure de l'offre : Location-maintenance, mise à disposition, achat, CPPR et coût coffret pour les réactifs</li>
+                            </ul>
+                        </li>
+                        <li>La gestion du marché pour la spectrométrie de masse
+                            <ul>
+                                <li>Forme du marché : Accord-cadre multi-attributaire à marchés subséquents</li>
+                                <li>Tâches : La gestion des avenants et des marchés subséquents, sourcing et mise en place d'une stratégie d'achat dans le cadre d'un renouvellement du marché</li>
+                            </ul>
+                        </li>
+                        <li>L'analyse des offres et attribution des marchés pour les tests sérologiques, antigéniques (COVID-19) et tests rapides (TROD)</li>
+                        <li>La gestion des marchés de décongélateur de plasma et des réactifs captifs de laboratoire</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Mars – Septembre 2020</div>
+                    <h3 class="experience-title">Ingénieur biomédical/Acheteur public (Stage) | RESAH (Réseau des acheteurs hospitaliers) | Paris</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Analyse du marché, sourcing et mise en place d'une stratégie d'achat pour les équipements de biologie délocalisée</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Juillet 2015 – Juillet 2017</div>
+                    <h3 class="experience-title">Responsable de site | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelles (HPNP)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Gestion et suivi d'un parc de matériel biomédical, par délégation à l'hôpital privé nord parisien de sarcelles (HPNP)</li>
+                        <li>Nombre de lits : 300</li>
+                        <li>Services : Maternité, bloc opératoire, ambulatoire et endoscopie, réanimation, dialyse, urgence, soins de suite et réadaptation</li>
+                        <li>Gestions : Des équipements biomédicaux, du budget de maintenance pluriannuel, des kits de maintenance, des consommables et réactifs, du module de déclaration des pannes, des ECME… Etc.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Mars - Juillet 2015</div>
+                    <h3 class="experience-title">Technicien biomédical (Stage) | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelle (HPNP)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Maintenance du parc biomédical</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modale Formations -->
+        <div id="formations-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('formations-modal')">&times;</span>
+                <h2 class="modal-title">Formations</h2>
+                
+                <ul>
+                    <li>2018-2020 : Master ingénierie pour le biomédical • Université Rouen-Normandie, France</li>
+                    <li>2014-2015 : Licence professionnelle maintenance et technologie : Technologie médicale et biomédicale • Université Paris-Descartes, France</li>
+                    <li>2013-2014 : BTS en systèmes électroniques • Lycée Gustave Eiffel, France</li>
+                    <li>2011-2013 : BTS en électrotechnique • Lycée de l'Essouriau, France</li>
+                    <li>2007-2008 : Baccalauréat scientifique série • Lycée de l'UNESCO, Guinée</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Modale Centres d'intérêt -->
+        <div id="interets-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('interets-modal')">&times;</span>
+                <h2 class="modal-title">Centres d'intérêt</h2>
+                
+                <div class="interests-container">
+                    <span class="interest-tag">Randonnée</span>
+                    <span class="interest-tag">Photographie</span>
+                    <span class="interest-tag">Vidéo</span>
+                </div>
+            </div>
+        </div>
+        
         <footer>
-            &copy; 2023 Alpha BALDÉ - Tous droits réservés
+            &copy; <span id="current-year"></span> Alpha BALDÉ - Tous droits réservés
         </footer>
     </div>
+
+    <script>
+        // Fonctions pour gérer les modales
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer la modale quand on clique en dehors
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Mise à jour automatique de l'année
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
