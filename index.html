@@ -29,14 +29,17 @@
             padding: 20px;
         }
         
+        .header-wrapper {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
         header {
             background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             color: white;
-            padding: 40px;
+            padding: 60px 40px 40px;
             text-align: center;
             border-radius: 15px 15px 0 0;
-            margin-bottom: 30px;
-            position: relative;
         }
         
         .profile-picture {
@@ -45,13 +48,15 @@
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
-            margin: -100px auto 20px;
+            margin: -75px auto 20px;
             display: block;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
         }
         
         h1 {
-            margin: 30px 0 0 0;
+            margin: 10px 0 0 0;
             font-size: 2.5em;
             font-weight: 700;
         }
@@ -66,7 +71,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
-            margin: 70px 0 50px 0;
+            margin: 50px 0;
         }
         
         .round-button {
@@ -251,18 +256,21 @@
                 padding: 20px;
             }
         }
-    </style>
+   </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header-wrapper">
+            <header>
+                <h1>Alpha BALDÉ</h1>
+                <div class="contact-info">
+                    <p>69 Impasse du midi, 07500 Guilherand-Granges</p>
+                    <p>Mobilité : Nationale et internationale | Contact : 07.49.64.06.78</p>
+                    <p>Courriel : alpha-balde@outlook.com | Permis B</p>
+                </div>
+            </header>
             <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745527554/WhatsApp_Image_2025-04-24_%C3%A0_22.44.40_d0ad1db6_h4owe0.jpg" alt="Photo Alpha BALDÉ" class="profile-picture">
-            <h1>Alpha BALDÉ</h1>
-            <div class="contact-info">
-                <p>69 Impasse du midi, 07500 Guilherand-Granges</p>
-                <p>Mobilité : Nationale et internationale | Contact : 07.49.64.06.78</p>
-                <p>Courriel : alpha-balde@outlook.com | Permis B</p>
-            </div>
+        </div>
         </header>
         
         <main>
