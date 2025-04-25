@@ -1,22 +1,21 @@
-// Mise à jour automatique de l'année dans le footer
+// Gestion des modales
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Fermer la modale quand on clique en dehors
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Mise à jour automatique de l'année
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Fonctionnalité pour afficher/masquer les détails des expériences
-document.querySelectorAll('.experience-item').forEach(item => {
-    const header = item.querySelector('.experience-header');
-    const content = item.querySelector('.experience-content');
-    
-    header.addEventListener('click', () => {
-        content.style.display = content.style.display === 'none' ? 'block' : 'none';
-    });
-});
-
-// Animation smooth scroll pour les ancres
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
