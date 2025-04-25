@@ -36,10 +36,22 @@
             text-align: center;
             border-radius: 15px 15px 0 0;
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin: -100px auto 20px;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         h1 {
-            margin: 0;
+            margin: 30px 0 0 0;
             font-size: 2.5em;
             font-weight: 700;
         }
@@ -54,7 +66,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
-            margin: 50px 0;
+            margin: 70px 0 50px 0;
         }
         
         .round-button {
@@ -218,6 +230,12 @@
         }
         
         @media (max-width: 768px) {
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+                margin: -70px auto 15px;
+            }
+            
             .round-button {
                 width: 120px;
                 height: 120px;
@@ -238,6 +256,7 @@
 <body>
     <div class="container">
         <header>
+            <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745527554/WhatsApp_Image_2025-04-24_%C3%A0_22.44.40_d0ad1db6_h4owe0.jpg" alt="Photo Alpha BALDÉ" class="profile-picture">
             <h1>Alpha BALDÉ</h1>
             <div class="contact-info">
                 <p>69 Impasse du midi, 07500 Guilherand-Granges</p>
