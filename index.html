@@ -32,19 +32,20 @@
         .header-wrapper {
             position: relative;
             margin-bottom: 60px;
+            text-align: center;
         }
         
         header {
             background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             color: white;
-            padding: 60px 40px 40px;
+            padding: 80px 40px 40px;
             text-align: center;
             border-radius: 15px 15px 0 0;
         }
         
         .profile-picture {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
@@ -242,6 +243,54 @@
             margin-bottom: 10px;
         }
         
+        /* Diaporama centres d'intérêt */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+        
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .slide-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .slideshow-controls button {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .slideshow-controls button:hover {
+            background: var(--primary-color);
+        }
+        
         .interests-container {
             display: flex;
             flex-wrap: wrap;
@@ -267,9 +316,13 @@
         
         @media (max-width: 768px) {
             .profile-picture {
-                width: 120px;
-                height: 120px;
+                width: 150px;
+                height: 150px;
                 margin: -80px auto 15px;
+            }
+            
+            header {
+                padding: 60px 20px 30px;
             }
             
             .round-button {
@@ -298,6 +351,7 @@
     <div class="container">
         <div class="header-wrapper">
             <header>
+                <img src="https://res.cloudinary.com/dvcapfeev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1745527554/WhatsApp_Image_2025-04-24_%C3%A0_22.44.40_d0ad1db6_h4owe0.jpg" alt="Photo Alpha BALDÉ" class="profile-picture">
                 <h1>Alpha BALDÉ</h1>
                 <div class="contact-info">
                     <p>69 Impasse du midi, 07500 Guilherand-Granges</p>
@@ -305,7 +359,6 @@
                     <p>Courriel : alpha-balde@outlook.com | Permis B</p>
                 </div>
             </header>
-            <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745527554/WhatsApp_Image_2025-04-24_%C3%A0_22.44.40_d0ad1db6_h4owe0.jpg" alt="Photo Alpha BALDÉ" class="profile-picture">
         </div>
         
         <main>
@@ -331,13 +384,12 @@
                 </button>
             </div>
 
-            <!-- Nouveaux boutons rectangulaires -->
             <div class="rect-buttons-container">
-                <a href="https://drive.google.com/file/d/1xCAiEy7_cqwjVRpFiktL07qP7oT5GLHV/view?usp=drive_link" class="rect-button" target="_blank">
+                <a href="https://res.cloudinary.com/dvcapfeev/image/upload/v1745623721/Catalogue_Medytel.pdf" class="rect-button" target="_blank">
                     <i class="fas fa-book"></i>
                     Catalogue d'équipements médicaux
                 </a>
-                <a href="https://drive.google.com/file/d/1CbEJOVlYWOYUQJnYD9Q_DyJQEs5pB7f-/view?usp=drive_link" class="rect-button" target="_blank">
+                <a href="https://res.cloudinary.com/dvcapfeev/image/upload/v1745626294/tely_bref_pr%C3%A9sentation_uujvzu.pdf" class="rect-button" target="_blank">
                     <i class="fas fa-lightbulb"></i>
                     Mes projets innovants
                 </a>
@@ -519,6 +571,30 @@
                 <span class="close" onclick="closeModal('interets-modal')">&times;</span>
                 <h2 class="modal-title">Centres d'intérêt</h2>
                 
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Alpha.jpg" alt="Alpha">
+                        <div class="slide-caption">Alpha</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Aix-en-Provence.jpg" alt="Aix-en-Provence">
+                        <div class="slide-caption">Aix-en-Provence</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Kindia.jpg" alt="Kindia">
+                        <div class="slide-caption">Kindia</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628756/Fouta.jpg" alt="Fouta">
+                        <div class="slide-caption">Fouta</div>
+                    </div>
+                    
+                    <div class="slideshow-controls">
+                        <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Précédent</button>
+                        <button onclick="nextSlide()">Suivant <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
                 <div class="interests-container">
                     <span class="interest-tag">Randonnée</span>
                     <span class="interest-tag">Photographie</span>
@@ -537,6 +613,12 @@
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'block';
             document.body.style.overflow = 'hidden';
+            
+            // Réinitialiser le diaporama quand on ouvre la modale
+            if(modalId === 'interets-modal') {
+                currentSlide = 0;
+                showSlide(currentSlide);
+            }
         }
 
         function closeModal(modalId) {
@@ -554,6 +636,27 @@
 
         // Mise à jour automatique de l'année
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Diaporama centres d'intérêt
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // Défilement automatique toutes les 5 secondes
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
