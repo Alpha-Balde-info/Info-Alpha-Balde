@@ -146,7 +146,46 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+        /* Bouton Télécharger CV */
+        .download-btn {
+            padding: 12px 25px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
         
+        .download-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .download-btn:hover::before {
+            left: 100%;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
         /* Styles des modales */
         .modal {
             display: none;
@@ -433,6 +472,10 @@
                     <p>Mobilité : France métropolitaine et internationale | Contact : 07.49.64.06.78</p>
                     <p>Courriel : <a href="mailto:alpha-balde@outlook.com" style="color: white;">alpha-balde@outlook.com</a> | Permis B</p>
                 </div>
+                 <!-- Bouton Télécharger CV -->
+                <a href="https://drive.google.com/uc?export=download&id=15MKbeSpFkCrWA2C6zWmLcwaXYkurhkLM" class="download-btn">
+                    <i class="fas fa-download"></i> Télécharger mon CV
+                </a>
             </header>
         </div>
         
