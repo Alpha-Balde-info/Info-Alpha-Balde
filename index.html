@@ -48,7 +48,7 @@
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
-            margin: -75px auto 20px;
+            margin: -100px auto 20px;
             display: block;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             position: relative;
@@ -104,6 +104,36 @@
         .round-button span {
             font-weight: 600;
             font-size: 1em;
+        }
+
+        /* Nouveaux boutons rectangulaires */
+        .rect-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .rect-button {
+            padding: 12px 25px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .rect-button:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Styles des modales */
@@ -238,12 +268,17 @@
             .profile-picture {
                 width: 120px;
                 height: 120px;
-                margin: -70px auto 15px;
+                margin: -80px auto 15px;
             }
             
             .round-button {
                 width: 120px;
                 height: 120px;
+            }
+
+            .rect-buttons-container {
+                flex-direction: column;
+                align-items: center;
             }
             
             .two-columns {
@@ -256,7 +291,7 @@
                 padding: 20px;
             }
         }
-   </style>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -271,7 +306,6 @@
             </header>
             <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745527554/WhatsApp_Image_2025-04-24_%C3%A0_22.44.40_d0ad1db6_h4owe0.jpg" alt="Photo Alpha BALDÉ" class="profile-picture">
         </div>
-        </header>
         
         <main>
             <div class="buttons-container">
@@ -294,6 +328,18 @@
                     <i class="fas fa-heart"></i>
                     <span>Centres d'intérêt</span>
                 </button>
+            </div>
+
+            <!-- Nouveaux boutons rectangulaires -->
+            <div class="rect-buttons-container">
+                <a href="https://res.cloudinary.com/dvcapfeev/image/upload/v1745623721/Catalogue_Medytel.pdf" class="rect-button" target="_blank">
+                    <i class="fas fa-book"></i>
+                    Catalogue d'équipements médicaux
+                </a>
+                <a href="#" class="rect-button">
+                    <i class="fas fa-lightbulb"></i>
+                    Mes projets innovants
+                </a>
             </div>
         </main>
         
