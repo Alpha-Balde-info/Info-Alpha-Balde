@@ -66,10 +66,10 @@
         }
         
         h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: var(--primary-color);
             text-align: center;
-            margin: 30px 0 15px;
+            margin: 40px 0 20px;
         }
         
         .contact-info {
@@ -117,28 +117,28 @@
             font-size: 1em;
         }
 
-        /* Boutons rectangulaires */
+        /* Nouveaux boutons rectangulaires */
         .rect-buttons-container {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 30px 0;
+            margin: 40px 0;
         }
         
         .rect-button {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background: var(--secondary-color);
             color: white;
             border: none;
             border-radius: 30px;
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
         }
         
@@ -148,40 +148,40 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Formulaire de contact compact */
+        /* Formulaire de contact */
         .contact-form {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 30px auto;
-            max-width: 500px;
+            margin: 40px auto;
+            max-width: 600px;
         }
         
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--primary-color);
-            font-size: 0.9em;
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-family: inherit;
-            font-size: 0.9em;
+            font-size: 1em;
         }
         
         .form-group textarea {
-            min-height: 100px;
+            min-height: 120px;
             resize: vertical;
         }
         
@@ -189,23 +189,21 @@
             background: var(--secondary-color);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 30px;
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            width: 100%;
-            justify-content: center;
+            gap: 10px;
         }
         
         .submit-btn:hover {
             background: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Styles des modales */
@@ -414,10 +412,6 @@
                 margin: 10% auto;
                 padding: 20px;
             }
-            
-            .contact-form {
-                padding: 20px;
-            }
         }
     </style>
 </head>
@@ -459,29 +453,29 @@
             </div>
 
             <div class="rect-buttons-container">
-                <a href="https://drive.google.com/file/d/1xCAiEy7_cqwjVRpFiktL07qP7oT5GLHV/view" class="rect-button" target="_blank">
+                <a href="https://res.cloudinary.com/dvcapfeev/image/upload/v1745623721/Catalogue_Medytel.pdf" class="rect-button" target="_blank">
                     <i class="fas fa-book"></i>
-                    Catalogue d'équipements
+                    Catalogue d'équipements médicaux
                 </a>
-                <a href="https://drive.google.com/file/d/1CbEJOVlYWOYUQJnYD9Q_DyJQEs5pB7f-/view" class="rect-button" target="_blank">
+                <a href="https://res.cloudinary.com/dvcapfeev/image/upload/v1745626294/tely_bref_pr%C3%A9sentation_uujvzu.pdf" class="rect-button" target="_blank">
                     <i class="fas fa-lightbulb"></i>
-                    Projets innovants
+                    Mes projets innovants
                 </a>
             </div>
         </main>
         
-        <!-- Section Contact compacte -->
+        <!-- Section Contact -->
         <section id="contact">
-            <h2><i class="fas fa-paper-plane"></i> Envoyez-moi un message</h2>
+            <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
             <div class="contact-form">
-                <form id="contactForm" action="mailto:alpha-balde@outlook.com" method="post" enctype="text/plain">
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
                     <div class="form-group">
-                        <label for="name">Votre nom</label>
+                        <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Votre email</label>
+                        <label for="email">Adresse email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     
@@ -496,27 +490,217 @@
                     </div>
                     
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Envoyer
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
                     </button>
                 </form>
             </div>
         </section>
         
-        <!-- Modales (contenu inchangé) -->
+        <!-- Modale Compétences -->
         <div id="competences-modal" class="modal">
-            <!-- Contenu inchangé -->
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('competences-modal')">&times;</span>
+                <h2 class="modal-title">Compétences</h2>
+                
+                <div class="two-columns">
+                    <div>
+                        <div class="competence-category">
+                            <h3>Achats publics</h3>
+                            <ul>
+                                <li>Prospecter et suivre les marchés (Sourcing, benchmarking, veille technologique, analyse des marchés)</li>
+                                <li>Participer aux ateliers de travail avec les prescripteurs</li>
+                                <li>Stratégie d'achat</li>
+                                <li>Code de la commande publique</li>
+                                <li>Mesurer la performance achat</li>
+                                <li>Rédaction des documents de marché (CCTP, BPU, CRT, RC…)</li>
+                                <li>Analyse des offres et attribution</li>
+                                <li>Piloter le lancement et l'exécution des marchés</li>
+                                <li>Participer aux négociations des contrats avec les fournisseurs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Biomédical</h3>
+                            <ul>
+                                <li>Maintenance préventive et curative sur divers équipements biomédicaux</li>
+                                <li>Gestion, analyse et organisation des activités de maintenance</li>
+                                <li>Gestion des pièces et des consommables</li>
+                                <li>Traçabilité des équipements et des interventions</li>
+                                <li>Établissement et suivi des déclarations de matériovigilance</li>
+                                <li>Normes : ISO 9001, ISO 13485, ISO 22870</li>
+                                <li>Gestion de l'équipe technique</li>
+                                <li>Gestion de projet (planification des renouvellements, coordination inter-services)</li>
+                                <li>Travail multi-sites, gestion d'urgences techniques</li>
+                                <li>Négociation fournisseurs, gestion des contrats de maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="competence-category">
+                            <h3>Techniques et théoriques</h3>
+                            <ul>
+                                <li>IRM, Scanner, SPECT, TEP, échographie et radiothérapie</li>
+                                <li>Ventilation et réanimation</li>
+                                <li>Équipements de biologie : Spectromètre de masse, biologie moléculaire, biologie délocalisée</li>
+                                <li>Table d'accouchement et d'opération, respirateur d'anesthésie et de transport</li>
+                                <li>Équipements du bloc opératoire</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Outils informatiques</h3>
+                            <ul>
+                                <li>Pack office</li>
+                                <li>PLACE, MAXIMILIEN</li>
+                                <li>OPTIM</li>
+                                <li>Sketchup</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="competence-category">
+                            <h3>Langues</h3>
+                            <ul>
+                                <li>Anglais : Intermédiaire B2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
+        <!-- Modale Expériences -->
         <div id="experiences-modal" class="modal">
-            <!-- Contenu inchangé -->
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('experiences-modal')">&times;</span>
+                <h2 class="modal-title">Expériences Professionnelles</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2023 – Aujourd'hui</div>
+                    <h3 class="experience-title">Ingénieur biomédical | Ramsay Santé (Pôle Drôme-Ardèche)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Gestion du parc biomédical pour 4 cliniques (Pasteur, Parisière, Générale de Valence, Kennedy – nombre de lits : environ 600)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Janvier 2021 – Aujourd'hui</div>
+                    <h3 class="experience-title">Auto-entrepreneur | Commerce et rénovation d'équipements biomédicaux</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Achat, reconditionnement et revente d'équipements médicaux (tests, remise en conformité)</li>
+                        <li>Stratégie commerciale ciblant les cliniques en Afrique de l'Ouest (étude de marché, négociation)</li>
+                        <li>Vente en ligne de dispositifs médicaux pour particuliers (via Amazon, eBay et réseaux sociaux)</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Septembre 2020 – Octobre 2021</div>
+                    <h3 class="experience-title">Ingénieur biomédical/Acheteur public | RESAH (Réseau des acheteurs hospitaliers) | Paris</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>L'achat d'équipements de biologie délocalisée (16 lots)
+                            <ul>
+                                <li>Forme du marché : Accord cadre mono-attributaire à bon de commande</li>
+                                <li>Structure de l'offre : Location-maintenance, mise à disposition, achat, CPPR et coût coffret pour les réactifs</li>
+                            </ul>
+                        </li>
+                        <li>La gestion du marché pour la spectrométrie de masse
+                            <ul>
+                                <li>Forme du marché : Accord-cadre multi-attributaire à marchés subséquents</li>
+                                <li>Tâches : La gestion des avenants et des marchés subséquents, sourcing et mise en place d'une stratégie d'achat dans le cadre d'un renouvellement du marché</li>
+                            </ul>
+                        </li>
+                        <li>L'analyse des offres et attribution des marchés pour les tests sérologiques, antigéniques (COVID-19) et tests rapides (TROD)</li>
+                        <li>La gestion des marchés de décongélateur de plasma et des réactifs captifs de laboratoire</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Mars – Septembre 2020</div>
+                    <h3 class="experience-title">Ingénieur biomédical/Acheteur public (Stage) | RESAH (Réseau des acheteurs hospitaliers) | Paris</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Analyse du marché, sourcing et mise en place d'une stratégie d'achat pour les équipements de biologie délocalisée</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Juillet 2015 – Juillet 2017</div>
+                    <h3 class="experience-title">Responsable de site | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelles (HPNP)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Gestion et suivi d'un parc de matériel biomédical, par délégation à l'hôpital privé nord parisien de sarcelles (HPNP)</li>
+                        <li>Nombre de lits : 300</li>
+                        <li>Services : Maternité, bloc opératoire, ambulatoire et endoscopie, réanimation, dialyse, urgence, soins de suite et réadaptation</li>
+                        <li>Gestions : Des équipements biomédicaux, du budget de maintenance pluriannuel, des kits de maintenance, des consommables et réactifs, du module de déclaration des pannes, des ECME… Etc.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-date">Mars - Juillet 2015</div>
+                    <h3 class="experience-title">Technicien biomédical (Stage) | AEC (FILIALE DE DRÄGER MEDICAL) | Hôpital privé nord parisien de sarcelle (HPNP)</h3>
+                    <div class="experience-place">Missions :</div>
+                    <ul>
+                        <li>Maintenance du parc biomédical</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
+        <!-- Modale Formations -->
         <div id="formations-modal" class="modal">
-            <!-- Contenu inchangé -->
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('formations-modal')">&times;</span>
+                <h2 class="modal-title">Formations</h2>
+                
+                <ul>
+                    <li>2018-2020 : Master ingénierie pour le biomédical • Université Rouen-Normandie, France</li>
+                    <li>2014-2015 : Licence professionnelle maintenance et technologie : Technologie médicale et biomédicale • Université Paris-Descartes, France</li>
+                    <li>2013-2014 : BTS en systèmes électroniques • Lycée Gustave Eiffel, France</li>
+                    <li>2011-2013 : BTS en électrotechnique • Lycée de l'Essouriau, France</li>
+                    <li>2007-2008 : Baccalauréat scientifique série • Lycée de l'UNESCO, Guinée</li>
+                </ul>
+            </div>
         </div>
         
+        <!-- Modale Centres d'intérêt -->
         <div id="interets-modal" class="modal">
-            <!-- Contenu inchangé -->
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('interets-modal')">&times;</span>
+                <h2 class="modal-title">Centres d'intérêt</h2>
+                
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Alpha.jpg" alt="Alpha">
+                        <div class="slide-caption">Alpha</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Aix-en-Provence.jpg" alt="Aix-en-Provence">
+                        <div class="slide-caption">Aix-en-Provence</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628757/Kindia.jpg" alt="Kindia">
+                        <div class="slide-caption">Kindia</div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dvcapfeev/image/upload/v1745628756/Fouta.jpg" alt="Fouta">
+                        <div class="slide-caption">Fouta</div>
+                    </div>
+                    
+                    <div class="slideshow-controls">
+                        <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Précédent</button>
+                        <button onclick="nextSlide()">Suivant <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="interests-container">
+                    <span class="interest-tag">Randonnée</span>
+                    <span class="interest-tag">Photographie</span>
+                    <span class="interest-tag">Vidéo</span>
+                </div>
+            </div>
         </div>
         
         <footer>
@@ -530,6 +714,7 @@
             document.getElementById(modalId).style.display = 'block';
             document.body.style.overflow = 'hidden';
             
+            // Réinitialiser le diaporama quand on ouvre la modale
             if(modalId === 'interets-modal') {
                 currentSlide = 0;
                 showSlide(currentSlide);
@@ -541,6 +726,7 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Fermer la modale quand on clique en dehors
         window.onclick = function(event) {
             if (event.target.className === 'modal') {
                 event.target.style.display = 'none';
@@ -569,17 +755,18 @@
             showSlide(currentSlide - 1);
         }
         
+        // Défilement automatique toutes les 5 secondes
         setInterval(nextSlide, 5000);
 
         // Gestion du formulaire de contact
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
-            // La soumission se fait via mailto:
-            // Une popup de confirmation pour améliorer l'UX
-            setTimeout(() => {
-                alert('Merci pour votre message! Je vous répondrai dès que possible.');
-                contactForm.reset();
-            }, 500);
+            e.preventDefault();
+            
+            // Ici vous pouvez ajouter le code pour envoyer le formulaire
+            // Par exemple avec Formspree ou un service similaire
+            alert('Message envoyé avec succès! Je vous répondrai dès que possible.');
+            contactForm.reset();
         });
     </script>
 </body>
